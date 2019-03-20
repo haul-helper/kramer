@@ -26,18 +26,17 @@ if __name__ == "__main__":
                             # If the user already has an invite or not
                             wasFound = NY.hey_buddy(message.author)
 
-                            """
-                                If they don't have an invite,
-                                add em to the list & send invite
-                            """
+                            # If they don't have an invite,
+                            # add em to the list & send invite
                             if not wasFound:
                                 print(
                                     "[kramer=>main->wasFound(false)] "
                                     "Sending Message\n"
                                 )
-
+                                # add to list of invites sent
                                 NY.kiss_hello(message.author)
 
+                                # send said invite
                                 full_uuid = uuid4()
                                 uuid = str(full_uuid)[:6]
                                 message.reply(uuid)
@@ -50,7 +49,8 @@ if __name__ == "__main__":
                                     "Skipping User + Deleting Message\n"
                                 )
                                 message.delete()
-                        # If the subject is formatted invalid-ly
+
+                        # If the subject is formatted poorly
                         else:
                             print(
                                 "[kramer=>main->Subject]"
